@@ -9,8 +9,6 @@ The secret, with a dummy values, is created by the module with the same name as 
 ### IAM Policy
 
 An IAM policy, with the mimimum permissions to pull images, is created by the module, attach this IAM policy to the resources that will use the pull through cache.
-
-
 ## Pull through cache usage
 
 To pull Docker images, for example,  with pull through cache, you must use the following image format url:
