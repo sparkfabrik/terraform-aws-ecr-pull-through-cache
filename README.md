@@ -44,6 +44,7 @@ Details about other upstream repositories (like Kubernetes, Quay, GitHub, GitLab
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the ECR pull through cache | `string` | `"eu-east-1"` | no |
+| <a name="input_credentials"></a> [credentials](#input\_credentials) | Upstream registry credentials | `map(string)` | <pre>{<br/>  "accessToken": "FILL-ME",<br/>  "username": "FILL-ME"<br/>}</pre> | no |
 | <a name="input_upstream_registry"></a> [upstream\_registry](#input\_upstream\_registry) | The upstream registry name | `string` | `"docker-hub"` | no |
 | <a name="input_upstream_registry_url"></a> [upstream\_registry\_url](#input\_upstream\_registry\_url) | The upstream registry URL | `string` | `"registry-1.docker.io"` | no |
 
@@ -61,6 +62,7 @@ Details about other upstream repositories (like Kubernetes, Quay, GitHub, GitLab
 | [aws_ecr_pull_through_cache_rule.ecr_pullthroughcache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_pull_through_cache_rule) | resource |
 | [aws_iam_policy.ecr_pullthroughcache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_secretsmanager_secret.ecr_pullthroughcache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret) | resource |
+| [aws_secretsmanager_secret_version.ecr_pullthroughcache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_version) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
 ## Modules
