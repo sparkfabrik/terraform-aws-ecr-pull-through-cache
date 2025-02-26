@@ -11,7 +11,7 @@ The secret, with a dummy values, is created by the module with the same name as 
 An IAM policy, with the minimum permissions to pull images, is created by the module. You need to attach this IAM policy to the resources that will use the pull through cache.
 ## Pull through cache usage
 
-To pull Docker images, for example,  with pull through cache, you must use the following image format url:
+In the following examples you can see how to pull Docker images using the pull through cache using the right image format for the URL:
 
 - For Docker Hub official images: `docker pull AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/docker-hub/library/image_name:tag`
 - For all other Docker Hub images: `docker pull AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/docker-hub/repository_name/image_name:tag`
