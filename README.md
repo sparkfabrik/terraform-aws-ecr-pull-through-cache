@@ -16,7 +16,7 @@ In the following examples you can see how to pull Docker images using the pull t
 - for Docker Hub official images: `docker pull AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/docker-hub/library/image_name:tag`.
 - For all other Docker Hub images: `docker pull AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/docker-hub/repository_name/image_name:tag`
 
-Details about other upstream repositories (like Kubernetes, Quay, GitHub, GitLab..) see the [AWS references](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache-working-pulling.html)
+For details about other upstream repositories (like Kubernetes, Quay, GitHub, GitLab, etc.), see the [AWS references](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache-working-pulling.html).
 
 
 <!-- BEGIN_TF_DOCS -->
