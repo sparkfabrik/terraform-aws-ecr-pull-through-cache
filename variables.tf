@@ -1,4 +1,4 @@
-variable "upstream_registry" {
+variable "upstream_registry_name" {
   type        = string
   default     = "docker-hub"
   description = "The upstream registry name"
