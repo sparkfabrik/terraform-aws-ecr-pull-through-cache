@@ -1,6 +1,6 @@
 # AWS ECR Pull Through cache module
 
-This module creates an ECR (Elastic Container Registry) [pull through cache role](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache-creating-rule.html) reource and the resources necessary to use it.
+This module creates an ECR (Elastic Container Registry) [pull through cache role](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache-creating-rule.html) resource and all the resources necessary to use it.
 
 
 ### Upstream credentials
