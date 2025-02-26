@@ -6,7 +6,7 @@ This module creates an ECR (Elastic Container Registry) [pull through cache role
 
 The upstream repository credentials must be stored in an AWS Secrets Manager secret.
 
-The secret, with a dummy values, is created by the module using the same name as `upstream_registry` variable value plus an AWS prefix. You need to update the secret with the real credentials. :warning: **ATTENTION:** this module ignores any changes for the secret value. The secret should be filled or updated manually in order to keep the secret value private.
+The secret, with a dummy values, is created by the module using the same name as `upstream_registry` variable value plus an AWS prefix. You need to update the secret with the real credentials. :warning: **ATTENTION:** this module ignores any changes for the secret value. The secret should be filled in or updated manually in order to keep the secret value private.
 
 ### IAM Policy
 
@@ -17,7 +17,7 @@ An IAM policy, with the minimum permissions to pull images, is created by the mo
 In the following examples you can see how to pull Docker images using the pull through cache using the right image format for the URL:
 
 - for Docker Hub official images: `docker pull AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/docker-hub/library/image_name:tag`.
-- For all other Docker Hub images: `docker pull AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/docker-hub/repository_name/image_name:tag`
+- For all other Docker Hub images: `docker pull AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/docker-hub/repository_name/image_name:tag`.
 
 For details about other upstream repositories (like Kubernetes, Quay, GitHub, GitLab, etc.), see the [AWS references](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache-working-pulling.html).
 
@@ -27,22 +27,21 @@ For details about other upstream repositories (like Kubernetes, Quay, GitHub, Gi
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0 |
 
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the ECR pull through cache | `string` | `"eu-east-1"` | no |
-| <a name="input_credentials"></a> [credentials](#input\_credentials) | Upstream registry credentials | `map(string)` | <pre>{<br/>  "accessToken": "FILL-ME",<br/>  "username": "FILL-ME"<br/>}</pre> | no |
-| <a name="input_upstream_registry"></a> [upstream\_registry](#input\_upstream\_registry) | The upstream registry name | `string` | `"docker-hub"` | no |
+| <a name="input_upstream_registry_name"></a> [upstream\_registry\_name](#input\_upstream\_registry\_name) | The upstream registry name | `string` | `"docker-hub"` | no |
 | <a name="input_upstream_registry_url"></a> [upstream\_registry\_url](#input\_upstream\_registry\_url) | The upstream registry URL | `string` | `"registry-1.docker.io"` | no |
 
 ## Outputs

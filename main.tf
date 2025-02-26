@@ -40,4 +40,6 @@ resource "aws_iam_policy" "ecr_pullthroughcache" {
       },
     ]
   })
+
+  depends_on = [ aws_ecr_pull_through_cache_rule.ecr_pullthroughcache ]
 }
