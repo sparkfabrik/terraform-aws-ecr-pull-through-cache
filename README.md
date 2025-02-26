@@ -5,7 +5,7 @@ This module creates an ECR (Elastic Container Registry) [pull through cache role
 
 The upstream repository credentials must be stored in an AWS Secrets Manager secret.
 
-The secret, with a dummy values, is created by the module with the same name as `upstream_registry` variable value plus an AWS prefix, update the secret with the real credentials.
+The secret, with a dummy values, is created by the module with the same name as `upstream_registry` variable value plus an AWS prefix. You need to update the secret with the real credentials. :warning: **ATTENTION:** this module ignores any changes for the secret value. The secret should be filled in manually in order to keep the secret value private.
 
 
 ### IAM Policy
