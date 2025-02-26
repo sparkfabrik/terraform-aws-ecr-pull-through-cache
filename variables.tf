@@ -15,12 +15,3 @@ variable "aws_region" {
   default     = "eu-east-1"
   description = "The AWS region to deploy the ECR pull through cache"
 }
-
-variable "credentials" {
-  type = map(string)
-  default = {
-    username    = "FILL-ME"
-    accessToken = "FILL-ME"
-  }
-  description = "Upstream registry credentials"
-}

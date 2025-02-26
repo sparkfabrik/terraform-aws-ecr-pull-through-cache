@@ -1,14 +1,17 @@
 # AWS ECR Pull Through cache module
 
 This module creates an ECR (Elastic Container Registry) [pull through cache role](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache-creating-rule.html) resource and all the resources necessary to use it.
+
 ### Upstream credentials
 
 The upstream repository credentials must be stored in an AWS Secrets Manager secret.
 
-The secret, with a dummy values, is created by the module with the same name as `upstream_registry` variable value plus an AWS prefix. You need to update the secret with the real credentials. :warning: **ATTENTION:** this module ignores any changes for the secret value. The secret should be filled in manually in order to keep the secret value private.
+The secret, with a dummy values, is created by the module using the same name as `upstream_registry` variable value plus an AWS prefix. You need to update the secret with the real credentials. :warning: **ATTENTION:** this module ignores any changes for the secret value. The secret should be filled or updated manually in order to keep the secret value private.
+
 ### IAM Policy
 
 An IAM policy, with the minimum permissions to pull images, is created by the module. You need to attach this IAM policy to the resources that will use the pull through cache.
+
 ## Pull through cache usage
 
 In the following examples you can see how to pull Docker images using the pull through cache using the right image format for the URL:
