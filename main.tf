@@ -6,7 +6,7 @@ resource "aws_secretsmanager_secret" "ecr_pullthroughcache" {
 }
 
 resource "aws_secretsmanager_secret_version" "ecr_pullthroughcache" {
-  secret_id     = aws_secretsmanager_secret.ecr_pullthroughcache.id
+  secret_id = aws_secretsmanager_secret.ecr_pullthroughcache.id
   secret_string = jsonencode({
     username    = "UPDATE-ME"
     accessToken = "UPDATE-ME"
@@ -41,5 +41,5 @@ resource "aws_iam_policy" "ecr_pullthroughcache" {
     ]
   })
 
-  depends_on = [ aws_ecr_pull_through_cache_rule.ecr_pullthroughcache ]
+  depends_on = [aws_ecr_pull_through_cache_rule.ecr_pullthroughcache]
 }
