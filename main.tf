@@ -1,5 +1,9 @@
 data "aws_caller_identity" "current" {}
 
+locals {
+  repository_uri = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.upstream_registry_name}"
+}
+
 # Create a secret in AWS Secrets Manager to store the upstream registry name.
 resource "aws_secretsmanager_secret" "ecr_pullthroughcache" {
   name = "ecr-pullthroughcache/${var.upstream_registry_name}"

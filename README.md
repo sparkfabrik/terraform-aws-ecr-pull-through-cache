@@ -48,8 +48,9 @@ For details about other upstream repositories (like Kubernetes, Quay, GitHub, Gi
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ecr_pullthroughcache_policy_arn"></a> [ecr\_pullthroughcache\_policy\_arn](#output\_ecr\_pullthroughcache\_policy\_arn) | The name of the resource. |
-| <a name="output_ecr_pullthroughcache_policy_name"></a> [ecr\_pullthroughcache\_policy\_name](#output\_ecr\_pullthroughcache\_policy\_name) | The name of the resource. |
+| <a name="output_ecr_pullthroughcache_policy_arn"></a> [ecr\_pullthroughcache\_policy\_arn](#output\_ecr\_pullthroughcache\_policy\_arn) | The ARN of the ECR pull-through cache policy. |
+| <a name="output_ecr_pullthroughcache_policy_name"></a> [ecr\_pullthroughcache\_policy\_name](#output\_ecr\_pullthroughcache\_policy\_name) | The name of the ECR pull-through cache policy. |
+| <a name="output_ecr_pullthroughcache_repository_uri"></a> [ecr\_pullthroughcache\_repository\_uri](#output\_ecr\_pullthroughcache\_repository\_uri) | The URI of the ECR pull throught cache repository URI. |
 
 ## Resources
 
