@@ -8,7 +8,7 @@ output "ecr_pullthroughcache_policy_name" {
   description = "The name of the ECR pull-through cache policy."
 }
 
-output "upstream_repository_uri" {
+output "ecr_pullthroughcache_repository_uri" {
   value       = local.repository_uri
-  description = "The URI of the upstream repository."
+  description = "The URI of the ECR pull throught cache repository URI."
 }

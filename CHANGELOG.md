@@ -13,8 +13,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Add a new output `upstream_repository_uri` to expose the ECR repository URI.
-
+- Add a new output `ecr_pullthroughcache_repository_uri` to expose the ECR repository URI.
 
 ## [0.1.0] - 2025-02-26
 
