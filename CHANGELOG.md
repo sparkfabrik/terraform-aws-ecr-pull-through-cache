@@ -12,11 +12,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Add fallback strategy using credentials stored in Kubernetes secrets in the needed namespaces.
+- Added fallback strategy using credentials stored in Kubernetes secrets for required namespaces.
 
 ### ⚠️ Breaking changes ⚠️
 
-AWS Secret Manager secret creation is removed from the module.
+- Removed AWS Secrets Manager secret creation from the module.
 
 ## [0.2.0] - 2025-02-27
 
