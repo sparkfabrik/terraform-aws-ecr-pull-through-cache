@@ -50,7 +50,7 @@ resource "kubernetes_secret_v1" "secret" {
     ".dockerconfigjson" = jsonencode(
       {
         "auths" : {
-          "var.upstream_registry_url" : {
+          (var.upstream_registry_url) : {
             "auth" : base64encode(data.aws_secretsmanager_secret_version.ecr_pullthroughcache.secret_string)
           }
         }
