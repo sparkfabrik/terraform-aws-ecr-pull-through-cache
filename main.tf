@@ -73,7 +73,7 @@ resource "aws_ecr_repository_creation_template" "pullthroughcache" {
       {
         "rulePriority": 1
         "description": "Expire images older than ${var.cache_expiration} days"
-        "selectionCriteria": {
+        "selection": {
           "tagStatus": "ANY"
           "countType": "sinceImagePushed"
           "countUnit": "days"
