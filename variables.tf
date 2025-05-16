@@ -27,3 +27,9 @@ variable "fallback_secret_name" {
   default     = "regcred"
   description = "The name of the secrets to create"
 }
+
+variable "cache_expiration" {
+  type        = number
+  description = "Number of days to keep cached images. If not set, lifecycle policy is disabled."
+  default     = null
+}

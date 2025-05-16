@@ -8,6 +8,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.4.0] - 2025-05-16
+
+- Added cache lifecycle policy
+
 ## [0.3.0] - 2025-03-14
 
 ### Added

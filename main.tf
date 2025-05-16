@@ -59,3 +59,30 @@ resource "kubernetes_secret_v1" "secret" {
   }
   type = "kubernetes.io/dockerconfigjson"
 }
+
+resource "aws_ecr_repository_creation_template" "pullthroughcache" {
+  # count = var.cache_expiration != null ? 1 : 0
+
+  prefix = "ROOT"
+  applied_for = [
+    "PULL_THROUGH_CACHE",
+  ]
+
+  lifecycle_policy = jsonencode({
+    "rules": [
+      {
+        "rulePriority": 1
+        "description": "Expire images older than ${var.cache_expiration} days"
+        "selectionCriteria": {
+          "tagStatus": "ANY"
+          "countType": "sinceImagePushed"
+          "countUnit": "days"
+          "countNumber": var.cache_expiration
+        }
+        "action": {
+          "type": "expire"
+        }
+      }
+    ]
+  })
+}

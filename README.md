@@ -49,6 +49,10 @@ For details about other upstream repositories (like Kubernetes, Quay, GitHub, Gi
 
 This module gives you the option to use a fallback strategy, the upstream credentials (stored in AWS Secret Manager) could be used to populate secrets in the needed namespaces, so you can use it in the ImagePullSecrets of your Kubernetes resources.
 
+### Cache expiration
+
+The module allows you to enable a "since Image Pushed" cache expiration policy, so you can control how long the cached images are kept in the ECR repository.
+The default value is `null`, which means that the lifecycle policy is disabled.
 
 <!-- BEGIN_TF_DOCS -->
 ## Providers
@@ -71,6 +75,7 @@ This module gives you the option to use a fallback strategy, the upstream creden
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the ECR pull through cache | `string` | `"eu-west-1"` | no |
+| <a name="input_cache_expiration"></a> [cache\_expiration](#input\_cache\_expiration) | Number of days to keep cached images. If not set, lifecycle policy is disabled. | `number` | `null` | no |
 | <a name="input_fallback_namespaces"></a> [fallback\_namespaces](#input\_fallback\_namespaces) | The list of namespaces to create the regcred secret in | `list(string)` | `[]` | no |
 | <a name="input_fallback_secret_name"></a> [fallback\_secret\_name](#input\_fallback\_secret\_name) | The name of the secrets to create | `string` | `"regcred"` | no |
 | <a name="input_upstream_registry_name"></a> [upstream\_registry\_name](#input\_upstream\_registry\_name) | The upstream registry name | `string` | `"docker-hub"` | no |
@@ -89,6 +94,7 @@ This module gives you the option to use a fallback strategy, the upstream creden
 | Name | Type |
 |------|------|
 | [aws_ecr_pull_through_cache_rule.ecr_pullthroughcache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_pull_through_cache_rule) | resource |
+| [aws_ecr_repository_creation_template.pullthroughcache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository_creation_template) | resource |
 | [aws_iam_policy.ecr_pullthroughcache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [kubernetes_secret_v1.secret](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret_v1) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
