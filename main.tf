@@ -61,7 +61,7 @@ resource "kubernetes_secret_v1" "secret" {
 }
 
 resource "aws_ecr_repository_creation_template" "pullthroughcache" {
-  # count = var.cache_expiration != null ? 1 : 0
+  count = var.cache_expiration != null ? 1 : 0
 
   prefix = "ROOT"
   applied_for = [
