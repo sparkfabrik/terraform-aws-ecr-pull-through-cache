@@ -59,3 +59,29 @@ resource "kubernetes_secret_v1" "secret" {
   }
   type = "kubernetes.io/dockerconfigjson"
 }
+
+resource "aws_ecr_repository_creation_template" "pullthroughcache" {
+  count = var.enable_cache_lifecycle ? 1 : 0
+
+  prefix = "ROOT"
+  applied_for = [
+    "PULL_THROUGH_CACHE",
+  ]
+
+  lifecycle_policy = jsonencode({
+    "rules": [
+      {
+        "rulePriority": 1
+        "description": "Keep only the last one image pulled from the upstream registry"
+        "selection": {
+          "tagStatus": "ANY"
+          "countType": "imageCountMoreThan"
+          "countNumber": 1
+        }
+        "action": {
+          "type": "expire"
+        }
+      }
+    ]
+  })
+}

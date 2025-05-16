@@ -27,3 +27,9 @@ variable "fallback_secret_name" {
   default     = "regcred"
   description = "The name of the secrets to create"
 }
+
+variable "enable_cache_lifecycle" {
+  type        = bool
+  description = "Enable cache lifecycle."
+  default     = false
+}
