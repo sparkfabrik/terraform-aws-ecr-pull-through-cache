@@ -51,8 +51,7 @@ This module gives you the option to use a fallback strategy, the upstream creden
 
 ### Cache expiration
 
-The module allows you to enable a "since Image Pushed" cache expiration policy, so you can control how long the cached images are kept in the ECR repository.
-The default value is `null`, which means that the lifecycle policy is disabled.
+The module allows you to enable a cache expiration policy, default is false. The default policy is to keep only the last image pulled.
 
 <!-- BEGIN_TF_DOCS -->
 ## Providers
@@ -75,7 +74,7 @@ The default value is `null`, which means that the lifecycle policy is disabled.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the ECR pull through cache | `string` | `"eu-west-1"` | no |
-| <a name="input_cache_expiration"></a> [cache\_expiration](#input\_cache\_expiration) | Number of days to keep cached images. If not set, lifecycle policy is disabled. | `number` | `null` | no |
+| <a name="input_enable_cache_lifecycle"></a> [enable\_cache\_lifecycle](#input\_enable\_cache\_lifecycle) | Enable cache lifecycle. | `bool` | `false` | no |
 | <a name="input_fallback_namespaces"></a> [fallback\_namespaces](#input\_fallback\_namespaces) | The list of namespaces to create the regcred secret in | `list(string)` | `[]` | no |
 | <a name="input_fallback_secret_name"></a> [fallback\_secret\_name](#input\_fallback\_secret\_name) | The name of the secrets to create | `string` | `"regcred"` | no |
 | <a name="input_upstream_registry_name"></a> [upstream\_registry\_name](#input\_upstream\_registry\_name) | The upstream registry name | `string` | `"docker-hub"` | no |

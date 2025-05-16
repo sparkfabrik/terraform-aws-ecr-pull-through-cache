@@ -61,7 +61,7 @@ resource "kubernetes_secret_v1" "secret" {
 }
 
 resource "aws_ecr_repository_creation_template" "pullthroughcache" {
-  count = var.cache_expiration != null ? 1 : 0
+  count = var.enable_cache_lifecycle ? 1 : 0
 
   prefix = "ROOT"
   applied_for = [
@@ -72,12 +72,11 @@ resource "aws_ecr_repository_creation_template" "pullthroughcache" {
     "rules": [
       {
         "rulePriority": 1
-        "description": "Expire images older than ${var.cache_expiration} days"
+        "description": "Keep only the last one image pulled from the upstream registry"
         "selection": {
           "tagStatus": "ANY"
-          "countType": "sinceImagePushed"
-          "countUnit": "days"
-          "countNumber": var.cache_expiration
+          "countType": "imageCountMoreThan"
+          "countNumber": 1
         }
         "action": {
           "type": "expire"
