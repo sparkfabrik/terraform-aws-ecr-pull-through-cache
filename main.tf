@@ -74,7 +74,7 @@ resource "aws_ecr_repository_creation_template" "pullthroughcache" {
         "rulePriority": 1
         "description": "Keep only the last one image pulled from the upstream registry"
         "selection": {
-          "tagStatus": "ANY"
+          "tagStatus": "any"
           "countType": "imageCountMoreThan"
           "countNumber": 1
         }

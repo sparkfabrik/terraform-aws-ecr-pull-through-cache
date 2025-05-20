@@ -8,6 +8,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.4.1] - 2025-05-20
+
+### Fixed
+
+- Fixed the `tagStatus` property typo.
+
 ## [0.4.0] - 2025-05-16
 
 - Added cache lifecycle policy
